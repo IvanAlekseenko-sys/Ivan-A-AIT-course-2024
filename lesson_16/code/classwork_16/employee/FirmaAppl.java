@@ -1,6 +1,5 @@
 package classwork_16.employee;
 
-import classwork_16.car_object.model.Car;
 import classwork_16.employee.model.Employee;
 
 public class FirmaAppl {

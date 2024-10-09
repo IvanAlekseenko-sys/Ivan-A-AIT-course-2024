@@ -34,7 +34,7 @@ public class Task2 {
         System.out.println("Количество символов в верхнем регистре: " + upperCaseCount);
 
         //считаем количество цифр в строке
-        int isDigit = 0; // переменная для подсчета количества цифр
+        int isDigit = 0;
         for (int i = 0; i < phrase.length(); i++) {
             char currentChar = phrase.charAt(i); //текущий символ
             if (Character.isDigit(currentChar)) {
@@ -49,7 +49,7 @@ public class Task2 {
         int spaceCounter = 0; // переменная для подсчета пробелов (код пробела 32)
         for (int i = 0; i < phrase.length(); i++) {
             char currentChar = phrase.charAt(i); //текущий символ
-            if (currentChar == (char) 32 ){
+            if (currentChar == (char) 32) {
                 spaceCounter++;
 
             }
@@ -67,7 +67,7 @@ public class Task2 {
         } else if (lastChar == '!') {
             System.out.println("Это восклицательное предложение.");
         } else {
-            System.out.println("Тип предложения не определен."); // Если нет ни одного из нужных знаков.
+            System.out.println("Тип предложения не определен.");
         }
 
     }//end of main

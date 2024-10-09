@@ -1,4 +1,4 @@
-package homework;
+package homework_15;
 
 //Задача 1. Дана строка "I'm proud to learn Java! Java is the most famous programming language!!!" Выполнить практикум с этой строкой:
 //Распечатать последний символ строки.

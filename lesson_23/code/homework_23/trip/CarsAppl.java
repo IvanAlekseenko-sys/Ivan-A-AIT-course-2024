@@ -1,6 +1,6 @@
-package homework_23.Trip;
+package homework_23.trip;
 
-import homework_23.Trip.model.Cars;
+import homework_23.trip.model.Cars;
 
 //Семья планирует поехать в отпуск в Италию из Германии и покрыть порядка 3000 км. Имеется информация о 5 автомобилях на жидком топливе (бензин или дизтопливо):
 //марка автомобиля: Audi, BMW, Opel, VW, Mercedes.

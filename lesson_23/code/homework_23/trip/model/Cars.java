@@ -1,4 +1,4 @@
-package homework_23.Trip.model;
+package homework_23.trip.model;
 
 import java.util.Objects;
 

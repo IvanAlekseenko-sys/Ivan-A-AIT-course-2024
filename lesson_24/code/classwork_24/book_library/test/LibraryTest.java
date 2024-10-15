@@ -1,9 +1,4 @@
-package classwork_24.book_library.test;//        Student cabinet
-//        Scheduler
-//        Lessons
-//        Search file or directory
-//        classwork_24/book_library/test/LibraryTest.java
-//        package classwork_24.book_library.test;
+package classwork_24.book_library.test;
 
 import classwork_24.book_library.model.Book;
 import org.junit.jupiter.api.BeforeEach;

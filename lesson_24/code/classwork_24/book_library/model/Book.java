@@ -1,10 +1,4 @@
 package classwork_24.book_library.model;
-//        Student cabinet
-//        Scheduler
-//        Lessons
-//        Search file or directory
-//        classwork_24/book_library/model/Book.java
-//        package classwork_24.book_library.model;
 
 // Создать класс Book с полями:
 // long isbn, String title, String author, int yearOfPublishing.

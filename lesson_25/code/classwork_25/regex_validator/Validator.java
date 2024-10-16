@@ -23,7 +23,7 @@ public class Validator {
     // PhoneNumber
     public static boolean checkPhoneNumber(String str) {
         // TODO Homework checkPhoneNumber DONE
-        return str.matches("\\+\\d{2}\\(\\d{2}\\)\\d{4}-\\d{4}");
+        return str.matches("\\s*\\+\\d{2}\\(\\d{2}\\)\\d{4}-\\d{4}\\s*");
     }
 
     // LessEquals255

@@ -14,6 +14,7 @@ import classwork_26.ait.employee.model.Employee;
 public interface Company {
 
     boolean addEmployee(Employee employee);
+    //boolean addEmployeeById(int id...) bad idea!
 
     Employee removeEmployee(int id);
 

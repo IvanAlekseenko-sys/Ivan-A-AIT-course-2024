@@ -4,7 +4,7 @@ import classwork_26.ait.employee.model.Employee;
 
 public class CompanyImpl implements Company {
 
-    private Employee[] employees;
+    private Employee[] employees; //element массива employees[0]
     private int size;
 
     // capacity - возможное кол-во сотрудников
@@ -15,16 +15,47 @@ public class CompanyImpl implements Company {
 
     @Override
     public boolean addEmployee(Employee employee) {
-        return false;
+        // bad cases
+        if (employee == null) {
+            return false;
+        }
+        if (size == employees.length) {
+            return false;
+        }
+        if (findEmployee(employee.getId()) != null) {
+            return false;
+        }
+        //good cases
+        employees[size] = employee;
+        size++;
+        return true;
     }
 
     @Override
     public Employee removeEmployee(int id) {
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getId() == id) {
+                Employee victim = employees[i];
+                employees[i] = employees[size - 1];
+                employees[size - 1] = null;
+                size--;
+                return victim;
+
+            }
+
+        }
         return null;
     }
 
     @Override
     public Employee findEmployee(int id) {
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getId() == id) {
+                return employees[i];
+
+            }
+
+        }
         return null;
     }
 
@@ -35,11 +66,15 @@ public class CompanyImpl implements Company {
 
     @Override
     public int quantity() {
-        return 0;
+        return size;
     }
 
     @Override
     public void printEmployee() {
+        for (int i = 0; i < size; i++) {
+            System.out.println(employees[i]);
+
+        }
 
     }
 

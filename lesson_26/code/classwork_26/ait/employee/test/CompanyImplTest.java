@@ -27,7 +27,7 @@ class CompanyImplTest {
         emp[2] = new SalesManager(3, "N3", "L3", 160, 80000, 0.15);
         emp[3] = new Worker(4, "N4", "L4", 160, 20);
 
-        //TODO поместить объекты emp[] в объект company с помощью addEmployee DONE
+        //поместить объекты emp[] в объект company с помощью addEmployee DONE
         for (int i = 0; i < 4; i++) {
             company.addEmployee(emp[i]);
         }
@@ -58,7 +58,7 @@ class CompanyImplTest {
         //can remove existed
         assertEquals(emp[1], company.removeEmployee(2));
         //check size
-        assertEquals(3,company.quantity() );
+        assertEquals(3, company.quantity());
         //can't remove absent
         assertNull(company.removeEmployee(7)); // удаляем несуществующий айди
     }
@@ -88,17 +88,35 @@ class CompanyImplTest {
 
     @Test
     void totalSalaryTest() {
+        double totalSalary = 29200;
+        assertEquals(totalSalary, company.totalSalary());
+    }
+
+    @Test
+    void averageSalaryTest() {
+        double averageSalary = 7300;
+        assertEquals(averageSalary, company.averageSalary());
     }
 
     @Test
     void totalSalesTest() {
+        //double totalSales = 130000;
+        assertEquals(130000, company.totalSales());
     }
 
     @Test
     void findEmployeeHoursGreaterThanTest() {
+        // Проверяем, что найдены сотрудники, у которых количество часов больше 150
+        Employee[] expected = {emp[0], emp[1], emp[2], emp[3]}; // Все сотрудники отработали больше 150 часов
+        assertArrayEquals(expected, company.findEmployeeHoursGreaterThan(150));
+
     }
 
     @Test
     void findEmployeeSalaryRangeTest() {
+        // Проверка на диапазон зарплат между 5000 и 11000 (должны быть только emp[0] и emp[1])
+        Employee[] expected = {emp[0], emp[1]};
+        assertArrayEquals(expected, company.findEmployeeSalaryRange(5000, 11000));
+
     }
 }

@@ -30,6 +30,8 @@ public interface Company {
 
     double totalSales();
 
+    double averageSalary();
+
     Employee[] findEmployeeHoursGreaterThan(int hours);
 
     Employee[] findEmployeeSalaryRange(double min, double max);

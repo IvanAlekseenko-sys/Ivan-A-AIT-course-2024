@@ -25,4 +25,6 @@ public interface ShopInterface {
 
     // Вывести информацию о всех устройствах
     void printAllComputers();
+
+    boolean removeComputer(int index);
 }

@@ -8,8 +8,7 @@ import homework_27.marathon.computerShop_marathon.model.Smartphone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopTest {
 
@@ -61,6 +60,13 @@ public class ShopTest {
         // Добавляем смартфон и ноутбук для теста
         double expectedWeight = ((Laptop) computers[1]).getWeight() + ((Smartphone) computers[2]).getWeight();
         assertEquals(expectedWeight, shop.totalMobileWeight());
+    }
+    @Test
+    public void testRemoveComputer_Success() {
+        // Удаляем компьютер по индексу 0
+        assertTrue(shop.removeComputer(0));
+        // Проверяем, что компьютер на индексе 0 теперь равен null
+        assertNull(computers[0]);
     }
 
 }

@@ -88,4 +88,12 @@ public class Shop implements ShopInterface {
             }
         }
     }
+    @Override
+    public boolean removeComputer(int index) {
+        if (index >= 0 && index < computers.length && computers[index] != null) {
+            computers[index] = null; // Удаляем компьютер
+            return true; // Успешно удалено
+        }
+        return false; // Компьютер не найден или индекс вне диапазона
+    }
 }

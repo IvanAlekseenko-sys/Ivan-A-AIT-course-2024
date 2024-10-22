@@ -15,6 +15,7 @@ public abstract class Employee {
         return minWage;
     }
 
+    //устанавливаем новую мин. зарлату, если она меньше минимума
     public static void setMinWage(double minWage) {
         if (minWage > Employee.minWage) {
             Employee.minWage = minWage;
@@ -82,14 +83,13 @@ public abstract class Employee {
     // methods for salary
     public abstract double calcSalary();
 
-    protected double ensureSalary(double salary){
-        if(salary < hours * minWage){
+    protected double ensureSalary(double salary) {
+        if (salary < hours * minWage) {
             System.out.println("Set min salary");
             salary = hours * minWage;
         }
         return salary;
     }
-
 
 
 } // end of class

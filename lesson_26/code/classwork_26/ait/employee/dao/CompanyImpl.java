@@ -91,19 +91,21 @@ public class CompanyImpl implements Company {
 
     @Override
     public double averageSalary() {
-        double averageSalary = 0;
-        for (int i = 0; i < size; i++) {
-            averageSalary += employees[i].calcSalary();
-        }
-        averageSalary /= size;
-        return averageSalary;
+        return totalSalary()/size;
+
+//        double averageSalary = 0;
+//        for (int i = 0; i < size; i++) {
+//            averageSalary += employees[i].calcSalary();
+//        }
+//        averageSalary /= size;
+//        return averageSalary;
     }
 
     @Override
     public double totalSales() {
         double totalSales = 0;
         for (int i = 0; i < size; i++) {
-            if (employees[i] instanceof SalesManager) { //проверка перед кастингом
+            if (employees[i] instanceof SalesManager) { //проверка перед кастингом, так как поле sales есть только в дочерних классах
                 SalesManager sm = (SalesManager) employees[i];
                 totalSales += sm.getSalesValue();
             }

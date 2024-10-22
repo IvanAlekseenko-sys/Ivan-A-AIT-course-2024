@@ -92,6 +92,7 @@ class CompanyImplTest {
         assertEquals(totalSalary, company.totalSalary());
     }
 
+
     @Test
     void averageSalaryTest() {
         double averageSalary = 7300;
@@ -115,8 +116,10 @@ class CompanyImplTest {
     @Test
     void findEmployeeSalaryRangeTest() {
         // Проверка на диапазон зарплат между 5000 и 11000 (должны быть только emp[0] и emp[1])
+        printEmployeeTest();
         Employee[] expected = {emp[0], emp[1]};
-        assertArrayEquals(expected, company.findEmployeeSalaryRange(5000, 11000));
+        Employee[] actual = company.findEmployeeSalaryRange(5000, 11000);
+        assertArrayEquals(expected, actual);
 
     }
 }

@@ -1,8 +1,7 @@
 package classwork_28.car_garage.ait.cars.dao;
 
-import classwork_28.car_garage.ait.cars.model.Car;
+import classwork_28.car_garage.ait.cars.car_sorting.model.Car;
 
-import java.util.Objects;
 import java.util.function.Predicate;
 
 public class GarageImpl implements Garage {
@@ -13,7 +12,7 @@ public class GarageImpl implements Garage {
 
     public GarageImpl(int capacity) {
         this.cars = new Car[capacity];
-        this.size = size;
+        this.size = 0;
     }
 
     @Override
@@ -29,13 +28,22 @@ public class GarageImpl implements Garage {
 
     @Override
     public Car removeCar(String regNumber) {
+        for (int i = 0; i < size; i++) {
+            if (cars[i].getRegNumber().equals(regNumber)) {
+                Car victim = cars[i];
+                cars[i] = cars[size - 1];
+                cars[size - 1] = null;
+                size--;
+                return victim;
+            }
+        }
         return null;
     }
 
     @Override
     public Car findCarByRegNumber(String regNumber) {
         for (int i = 0; i < size; i++) {
-            if (cars[i].getRegNumber().equals(regNumber)) {
+            if (cars[i] != null && cars[i].getRegNumber().equals(regNumber)) {
                 return cars[i];
             }
         }
@@ -49,17 +57,23 @@ public class GarageImpl implements Garage {
 
     @Override
     public Car[] findCarsByCompany(String company) {
-        return new Car[0];
+        return findCarsByPredicate(car -> car.getCompany().equals(company));
     }
 
     @Override
     public Car[] findCarsByEngine(double min, double max) {
-        return new Car[0];
+        return findCarsByPredicate(car -> car.getEngine() > min && car.getEngine() < max);
     }
 
     @Override
     public Car[] findCarsByColor(String color) {
-        return new Car[0];
+        return findCarsByPredicate(car -> car.getColor().equals(color));
+    }
+
+    @Override
+    public Car[] findCarsByRegNumber(String regNumber) {
+        return findCarsByPredicate(car -> car.getRegNumber().equals(regNumber));
+
     }
 
     @Override
@@ -86,8 +100,8 @@ public class GarageImpl implements Garage {
         }
         //читаем массив и перекладываем результаты в новый
         Car[] res = new Car[count];
-        for (int i = 0, j = 0 ; j < res.length; i++) {
-            if(predicate.test(cars[i])){
+        for (int i = 0, j = 0; j < res.length; i++) {
+            if (predicate.test(cars[i])) {
                 res[j++] = cars[i];
             }
         }

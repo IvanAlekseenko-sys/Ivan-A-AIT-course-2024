@@ -1,6 +1,6 @@
 package classwork_28.car_garage.ait.cars.dao;
 
-import classwork_28.car_garage.ait.cars.model.Car;
+import classwork_28.car_garage.ait.cars.car_sorting.model.Car;
 
 public interface Garage {
     boolean addCar(Car car);
@@ -16,6 +16,9 @@ public interface Garage {
     Car[] findCarsByEngine(double min, double max);
 
     Car[] findCarsByColor(String color);
+
+    Car[] findCarsByRegNumber(String regNumber);
+
 
     int size();
 

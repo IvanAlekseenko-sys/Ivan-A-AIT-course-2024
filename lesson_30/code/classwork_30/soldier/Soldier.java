@@ -81,4 +81,6 @@ public class Soldier implements Comparable <Soldier> {
         //return this.height - s.getHeight();
     }
 
+
+
 }//end of class

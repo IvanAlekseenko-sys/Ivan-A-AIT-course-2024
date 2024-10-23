@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import static com.sun.org.apache.bcel.internal.classfile.Utility.printArray;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SoldierTest {
@@ -27,6 +28,8 @@ class SoldierTest {
         };
     }//end of method
 
+    //- отсортировать солдат "естественным" образом - по росту
+
     @Test
     void testNativeSorting() {
         System.out.println("------------Print as is------------");
@@ -35,8 +38,6 @@ class SoldierTest {
         System.out.println("------------Print sorted by height ( after native sorting)------------");
         printArray(soldiers);
     }
-//- отсортировать солдат "естественным" образом - по росту
-//- проверить работу метода binarySearch на массиве объектов
 
     //- отсортировать по имени
 
@@ -97,6 +98,7 @@ class SoldierTest {
         System.out.println();
         printArray(soldiers);
     }
+//- проверить работу метода binarySearch на массиве объектов
 
        @Test
        void testBinarySearch(){
@@ -105,7 +107,7 @@ class SoldierTest {
            Arrays.sort(soldiers, (s1, s2) -> (s1.getProfile() - s2.getProfile()));
            System.out.println("------------Print sorted by profile------------");
            printArray(soldiers);
-           //created object pattern for searching
+           //create object pattern for searching
            Soldier pattern = new Soldier (null, 0, 0, 100);
            int index = Arrays.binarySearch(soldiers, pattern, (s1, s2) -> (s1.getProfile() - s2.getProfile()));
            System.out.println("Index of pattern = " + index);

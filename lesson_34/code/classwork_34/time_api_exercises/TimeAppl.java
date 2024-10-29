@@ -1,4 +1,4 @@
-package time_api_exercises;
+package classwork_34.time_api_exercises;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,6 +7,7 @@ import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.Locale;
 
 public class TimeAppl {
     public static void main(String[] args) {
@@ -53,5 +54,15 @@ public class TimeAppl {
         date = gagarin.format(df);
         System.out.println(date);
 
+        //задаем locale
+        df = DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.ITALIAN);
+        date = gagarin.format(df);
+        System.out.println(date);
+
+        //parsing LocalDate from String
+        System.out.println("///////////////////////////////////////////////");
+        String stringDate = "29/02/2024";
+        LocalDate result = LocalDate.parse(stringDate, DateTimeFormatter.ofPattern("[dd:MM:yyyy][dd/MM/yyyy][dd-MM-yyyyy]"));
+        System.out.println(result);// ISO  format
     }
 }

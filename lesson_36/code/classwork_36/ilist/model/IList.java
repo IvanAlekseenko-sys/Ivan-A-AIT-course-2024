@@ -31,6 +31,8 @@ public interface IList<E> extends Iterable<E>{
 
     E get(int index);
 
+    E set (int index, E element);
+
     int indexOf(Object o);
 
     int lastIndexOf(Object o);

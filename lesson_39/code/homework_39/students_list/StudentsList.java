@@ -17,7 +17,7 @@ public class StudentsList {
         System.out.println("Students from informatics group: ");
         printList(informaticsGroup);
         System.out.println("------------------------------------------");
-        System.out.println("Students from math and informatics groups: " + findCommonStudents(mathGroup,informaticsGroup));
+        System.out.println("Students from math and informatics groups: " + findCommonStudents(mathGroup, informaticsGroup));
 
     }
 
@@ -31,19 +31,19 @@ public class StudentsList {
     //findCommonStudents
     private static List<String> findCommonStudents(List<String> mathGroup, List<String> informaticsGroup) {
         HashSet<String> setA = new HashSet<>(mathGroup);
-        List<String> commonFriends = new ArrayList<>();
+        List<String> commonStudents = new ArrayList<>();
 
-        // Обойдем setA и по ходу обхода будем сравнивать элементы со списком friendsB
-        for (String f : informaticsGroup) {
-            if (setA.contains(f)) {
-                commonFriends.add(f);
+        // Обойдем setA и по ходу обхода будем сравнивать элементы со списком informaticsGroup
+        for (String s : informaticsGroup) {
+            if (setA.contains(s)) {
+                commonStudents.add(s);
             }
         }
 
-        if (commonFriends.isEmpty()) {
+        if (commonStudents.isEmpty()) {
             System.out.println("There are no common students");
             return null;
         }
-        return commonFriends;
+        return commonStudents;
     }
 }

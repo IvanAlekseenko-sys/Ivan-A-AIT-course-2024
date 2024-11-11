@@ -56,7 +56,7 @@ public class BoatAppl {
 
         //получить среднюю стоимость яхты из созданного набора;
         double averagePrice = boatList.stream()
-                .mapToDouble(Boat::getPrice)  // Преобразует каждый объект Boat в его цену (тип double)
+                .mapToDouble(Boat::getPrice)  // Преобразует каждый объект Boat в double
                 .average()  // Вычисляет среднее значение
                 .orElse(0.0);  // Если список пуст, возвращает 0.0
 

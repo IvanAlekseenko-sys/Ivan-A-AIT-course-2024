@@ -1,4 +1,4 @@
-package homework_45.compareFiles;
+package homework_45.compare_files;
 
 import java.io.File;
 import java.io.FileInputStream;

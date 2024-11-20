@@ -23,7 +23,7 @@ public class SolutionAppl {
 
     private static int solution(int a, int b) throws NoSolutionException, SolutionIsAnyNumber {
         if (a == 0 && b != 0) {
-            throw new NoSolutionException("No possible solution, division by 0 impossible!");
+            throw new NoSolutionException("No possible solution, division by 0 is impossible!");
         }
         if (a == 0 && b == 0) {
             throw new SolutionIsAnyNumber("X - is any number!");
